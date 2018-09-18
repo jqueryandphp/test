@@ -1,0 +1,28 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    {include file="public/meta"}
+    <title>管理员后台</title>
+    <meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+    <meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+
+<body>
+    {include file="public/header"}
+    {include file="public/left"}
+    {block name="container"}
+        主题内容
+    {/block}
+    {include file="public/footer"}
+    {block name="js"}
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript">
+    alert(111);
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+    {/block}
+</body>
+
+</html>
