@@ -6,6 +6,7 @@ use think\Session;
 
 class Base extends Controller
 {
+    protected $adminInfo;
     // 获取管理员的信息
     public function _initialize()
     {
@@ -15,6 +16,7 @@ class Base extends Controller
         }
         parent::_initialize();
         $adminInfo=User::get(Session::get('adminInfo'));
+        $this -> adminInfo=$adminInfo;
         $this -> view -> share(['adminInfo'=>$adminInfo]);
     }
 }

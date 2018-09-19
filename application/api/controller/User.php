@@ -50,6 +50,9 @@
                         $msg='用户登录成功';
                         // 管理员点击保存密码, 则将密码存在cookie中
                         if(isset($request->param()['online'])) {
+                            $adminInfo=array();
+                            $adminInfo['username']=$request->param()['username'];
+                            $adminInfo['password']=$request->param()['password'];
                             Cookie::set('adminInfo', $param);
                         }
                         // 更新管理员登录次数

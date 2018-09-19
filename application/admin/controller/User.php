@@ -2,7 +2,6 @@
 namespace app\admin\controller;
 use think\Controller;
 use think\Request;
-use think\controller\Rest;
 use think\Session;
 use think\Cookie;
 
@@ -22,31 +21,11 @@ class User extends Controller
         return $this -> view -> fetch();
     }
 
-    public function role_list()
+    public function logout()
     {
-        return $this -> view -> fetch('admin-role');
+        Session::delete('adminInfo');
+        $this->success('退出登陆成功', url('login'));
     }
-
-    public function roleAdd()
-    {
-        return $this -> view -> fetch('admin-role-add');
-    }
-
-    public function limit_list()
-    {
-        return $this -> view -> fetch('admin-permission');
-    }
-
-    public function admin_list()
-    {
-        return $this -> view -> fetch('admin-list');
-    }
-
-    public function admin_add()
-    {
-        return $this -> view -> fetch('admin-add');
-    }
-
     
 }
 
